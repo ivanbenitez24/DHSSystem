@@ -24,7 +24,7 @@ function clock() {
       month = d.getMonth() + 1,
       year = d.getFullYear(),
            
-      hDeg = h * 60 + m * (360/720),
+      hDeg = h * 30 + m * (360/720),
       mDeg = m * 6 + s * (360/3600),
       sDeg = s * 6,
       
