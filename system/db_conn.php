@@ -1,5 +1,5 @@
 <?php
-  $servername = "containers-us-west-29.railway.app";
+  $servername = "containers-us-west-69.railway.app";
   $username = "root";
   $password = "b3aVysaOxk6ChWTHPH5u";
   $db_name = "railway";
