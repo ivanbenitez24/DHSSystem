@@ -1,12 +1,11 @@
 <?php
   $servername = "containers-us-west-29.railway.app";
- 
   $username = "root";
-  $password = "FdmRrA8CShpnSG7YStpQ";
-
+  $password = "b3aVysaOxk6ChWTHPH5u";
   $db_name = "railway";
-  
-  $conn = new mysqli($servername, $username, $password, $db_name);
+  $dp_port = "6181";
+
+  $conn = new mysqli($servername, $username, $password, $db_name,$db_port);
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
