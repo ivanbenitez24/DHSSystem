@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #345e42;
+  }
+  
+  .box{
+    width: 1300px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #95ee88;
+    text-align: center;
+    box-shadow: 0 2vw 4vw -1vw black;
+  }
+  
+  img{
+    padding: 30px;
+    margin: auto;
+  }
+  
+  .nav {
+    height: 97.5%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    background-color: #339125;
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+  
+  .nav h2{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 10px;
+    padding-bottom: 30px;
+  }
+  
+  .nav h1{
+    padding: 25px 8px 25px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+  }
+
+.section {
+    margin-right: 80px;
+}
+
+.section h1{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 32px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.section .error{
+    border: 0;
+    background: #db3434;
+    display: block;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    border: 2px solid #db3434;
+    padding: 5px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.section input{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #31e07a;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+.section input:focus{
+    width: 250px;
+    border-color: #2ecc71;
+}
+
+.section button{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 14px;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 10px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.section button:focus{
+    width: 150px;   
+    border-color: #31e07a;
+}
+.section button:hover{
+    background: #31e07a;
+}
+
+.section a{
+    margin-left:  800px;
+}

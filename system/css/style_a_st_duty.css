@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #345e42;
+  }
+  
+  .box{
+    width: 1300px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #95ee88;
+    text-align: center;
+    box-shadow: 0 2vw 4vw -1vw black;
+  }
+  
+  img{
+    padding: 30px;
+    margin: auto;
+  }
+  
+  .nav {
+    height: 97.5%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    background-color: #339125;
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+  
+  .nav h2{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 10px;
+    padding-bottom: 30px;
+  }
+  
+  .nav h1{
+    padding: 25px 8px 25px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+  }
+
+  .box button[type = "btn_exit"]{
+    border: 0;
+    background: none;
+    margin-top: 20px;
+    margin-left: 1150px;
+    text-align: center;
+    font-size: 14px;
+    border: 3px solid #339125;
+    padding: 5px;
+    width: 100px;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+  .box button[type = "btn_exit"]:focus{
+    width: 100px;   
+    border-color: #2ecc71;
+  }
+  .box button[type = "btn_exit"]:hover{
+    background: #34ec81;
+  }
+
+.article {
+    padding: 30px;
+    margin-left: 280px;
+}
+
+#St_Input {
+    font-size: 14px;
+    width: 95%;
+    padding: 8px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+#St_table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #339125;
+    font-size: 16px;
+    color: black;
+}
+#St_table th, #St_table td {
+    text-align: center;
+    padding: 14px;
+}
+#St_table td{
+    font-size: 12px;
+}
+#St_table tr {
+    border-bottom: 1px solid #ddd#339125;
+}
+#St_table tr.header, #St_table tr:hover {
+    background-color: #2ecc71;
+}
