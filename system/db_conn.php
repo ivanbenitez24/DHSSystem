@@ -13,6 +13,5 @@
     // set the connection timeout to 60 seconds
     mysqli_options($conn, MYSQLI_OPT_CONNECT_TIMEOUT, 60);
 
-    echo "success";
   }
 ?>
