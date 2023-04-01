@@ -3,7 +3,7 @@
   $username = "root";
   $password = "b3aVysaOxk6ChWTHPH5u";
   $db_name = "railway";
-  $dp_port = "6181";
+  $db_port = "6181";
 
   $conn = new mysqli($servername, $username, $password, $db_name,$db_port);
   if ($conn->connect_error) {
