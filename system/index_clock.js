@@ -48,3 +48,4 @@ function clock() {
 }
 
 setInterval("clock()", 100);
+}
