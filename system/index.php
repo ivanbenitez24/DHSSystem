@@ -7,7 +7,7 @@ include "db_conn.php";
 <head>
     <meta charset="utf-8">
     <title> HK Duty Hours Monitoring System </title>
-    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="css/style_index.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
