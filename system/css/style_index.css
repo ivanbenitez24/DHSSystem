@@ -56,43 +56,45 @@ img{
 }
 
 .clock {
-    background: #ececec;
-    width: 300px;
-    height: 300px;
-    margin: 4% auto 0;
-    border-radius: 50%;
-    border: 14px solid #333;
-    position: relative;
-    left: 110px;
-    box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
+  background: #ececec;
+  width: 300px;
+  height: 300px;
+  margin: 8% auto 0;
+  border-radius: 50%;
+  border: 14px solid #333;
+  position: relative;
+  box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
 }
+
 .dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #ccc;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
-    z-index: 10;
-    box-shadow: 0 2px 4px -1px black;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 2px 4px -1px black;
 }
+
 .hour-hand {
-    position: absolute;
-    z-index: 5;
-    width: 4px;
-    height: 65px;
-    background: #333;
-    top: 79px;
-    transform-origin: 50% 72px;
-    left: 50%;
-    margin-left: -2px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+  position: absolute;
+  z-index: 5;
+  width: 4px;
+  height: 65px;
+  background: #333;
+  top: 79px;
+  transform-origin: 50% 72px;
+  left: 50%;
+  margin-left: -2px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
 }
+
 .minute-hand {
   position: absolute;
   z-index: 6;
@@ -106,6 +108,7 @@ img{
   border-top-right-radius: 50%;
   transform-origin: 50% 105px;
 }
+
 .second-hand {
   position: absolute;
   z-index: 7;
@@ -119,6 +122,7 @@ img{
   border-top-right-radius: 50%;
   transform-origin: 50% 125px;
 }
+
 span {
   display: inline-block;
   position: absolute;
@@ -128,6 +132,7 @@ span {
   font-weight: 700;
   z-index: 4;
 }
+
 .h12 {
   top: 30px;
   left: 50%;
@@ -146,12 +151,13 @@ span {
   left: 32px;
   top: 140px;
 }
+
 .diallines {
   position: absolute;
   z-index: 2;
   width: 2px;
   height: 15px;
-  background: #666a;
+  background: #666;
   left: 50%;
   margin-left: -1px;
   transform-origin: 50% 150px;
@@ -166,6 +172,7 @@ span {
   margin-left: -1px;
   transform-origin: 50% 150px;
 }
+
 .info {
   position: absolute;
   width: 120px;
@@ -191,57 +198,4 @@ span {
   }
 .day {
     top: 200px;
-}
-
-.log{
-  box-shadow: 0 4px 8px 0 rgba(21, 172, 33, 0.87);
-  color: black;
-  max-width: 300px;
-  height: 100px;
-  margin-top: 60px;
-  margin-left: 605px;
-  padding: 15px;
-  text-align: center;
-  font-family: arial;
-  font-size: 16px;
-}
-.log input{
-  border: 0;
-  background: none;
-  display: block;
-  margin: 10px auto;
-  padding: 5px;
-  font-size: 16px;
-  text-align: center;
-  border: 2px solid #31e07a;
-  width: 220px;
-  outline: none;
-  color: black;
-  border-radius: 8px;
-  transition: 0.25s;
-}
-.log input:focus{
-  width: 250px;
-  border-color: #2ecc71;
-}
-
-.log button{
-    border: 0;
-    background: none;
-    font-size: 14px;
-    text-align: center;
-    border: 2px solid #2ecc71;
-    padding: 5px;
-    outline: none;
-    color: black;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer;
-}
-.log button:focus{
-    width: 150px;   
-    border-color: #31e07a;
-}
-.log button:hover{
-    background: #31e07a;
 }
