@@ -37,106 +37,122 @@ include "db_conn.php";
               <span class="h12">12</span>
             </div>
             <div class="diallines"></div>
-          </div>
+        </div>
         <script>
-        var dialLines = document.getElementsByClassName('diallines');
-var clockEl = document.getElementsByClassName('clock')[0];
+            var dialLines = document.getElementsByClassName('diallines');
+            var clockEl = document.getElementsByClassName('clock')[0];
 
-for (var i = 1; i < 60; i++) {
-  clockEl.innerHTML += "<div class='diallines'></div>";
-  dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
-}
+            for (var i = 1; i < 60; i++) {
+            clockEl.innerHTML += "<div class='diallines'></div>";
+            dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
+            }
 
-function clock() {
-  var weekday = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      d = new Date(),
-      h = d.getHours(),
-      m = d.getMinutes(),
-      s = d.getSeconds(),
-      date = d.getDate(),
-      month = d.getMonth() + 1,
-      year = d.getFullYear(),
-           
-      hDeg = h * 30 + m * (360/720),
-      mDeg = m * 6 + s * (360/3600),
-      sDeg = s * 6,
-      
-      hEl = document.querySelector('.hour-hand'),
-      mEl = document.querySelector('.minute-hand'),
-      sEl = document.querySelector('.second-hand'),
-      dateEl = document.querySelector('.date'),
-      dayEl = document.querySelector('.day');
-  
-      var day = weekday[d.getDay()];
-  
-  if(month < 9) {
-    month = "0" + month;
-  }
-  
-  hEl.style.transform = "rotate("+hDeg+"deg)";
-  mEl.style.transform = "rotate("+mDeg+"deg)";
-  sEl.style.transform = "rotate("+sDeg+"deg)";
-  dateEl.innerHTML = date+"/"+month+"/"+year;
-  dayEl.innerHTML = day;
-}
+            function clock() {
+            var weekday = [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                d = new Date(),
+                h = d.getHours(),
+                m = d.getMinutes(),
+                s = d.getSeconds(),
+                date = d.getDate(),
+                month = d.getMonth() + 1,
+                year = d.getFullYear(),
+                    
+                hDeg = h * 30 + m * (360/720),
+                mDeg = m * 6 + s * (360/3600),
+                sDeg = s * 6,
+                
+                hEl = document.querySelector('.hour-hand'),
+                mEl = document.querySelector('.minute-hand'),
+                sEl = document.querySelector('.second-hand'),
+                dateEl = document.querySelector('.date'),
+                dayEl = document.querySelector('.day');
+            
+                var day = weekday[d.getDay()];
+            
+            if(month < 9) {
+                month = "0" + month;
+            }
+            
+            hEl.style.transform = "rotate("+hDeg+"deg)";
+            mEl.style.transform = "rotate("+mDeg+"deg)";
+            sEl.style.transform = "rotate("+sDeg+"deg)";
+            dateEl.innerHTML = date+"/"+month+"/"+year;
+            dayEl.innerHTML = day;
+            }
 
-setInterval("clock()", 100);
-
+            setInterval("clock()", 100);
         </script>
-       <div class="log">
-        <form action="#" method="post">
-            <input type="text" id="st_id" name="st_id" placeholder="Enter your student id">
-            <button type="btn1" id="time_in" name="time_in"> TIME IN </button>
-            <button type="btn2" id="time_out" name="time_out"> TIME OUT </button>
-        </form>
-        <?php
-        if (isset($_POST['time_in'])){
-            $date = date('Y-m-d');
-            $timein = date('08:30:16');
+        
+        <div class="log">
+            <form action="#" method="post">
+                <input type="text" id="st_id" name="st_id" placeholder="Enter your student id">
+                <button type="btn1" id="time_in" name="time_in"> TIME IN </button>
+                <button type="btn2" id="time_out" name="time_out"> TIME OUT </button>
+            </form>
+            <?php
+                if (isset($_POST['time_in'])){
+                        $st_id = $_POST['st_id'];
+                        date_default_timezone_set('Asia/Manila');
+                        $date = date('Y-m-d');
+                        $timein = date('H:i:s');
 
-            if(mysqli_query($conn, "INSERT INTO st_timein (st_date, st_timein) VALUES ('$date','$timein');")){
+                        // check if the record exists in the database
+                        $result = mysqli_query($conn, "SELECT * FROM student_pfp WHERE st_id = '$st_id'");
+                        if(mysqli_num_rows($result) == 0) {
+                            echo "Invalid Student ID";
+                        } else {
+                            if(mysqli_query($conn, "INSERT INTO st_time (st_id, st_date, st_timein) VALUES ('$st_id', '$date','$timein');")){
                 ?>
-                <script type="text/javascript">
-                    alert("Successfully TimeIn: Student ID - TimeIn.")
-                </script>
+                                <script type="text/javascript">
+                                    alert("TimeIn Successfully.<?php $st_id - $timein ?>")
+                                </script>
                 <?php
-            }else{
+                            }else{
                 ?>
-                <script type="text/javascript">
-                    alert("Error Found.")
-                </script>
+                                <script type="text/javascript">
+                                    alert("TimeIn Unsuccessfully. Record Not Found.")
+                                </script>
                 <?php
-            }
-        }
-        ?>
-        <?php
-        if (isset($_POST['time_out'])){
-            $date = date('Y-m-d');
-            $timeout = date('10:25:30');
-
-            if(mysqli_query($conn, "INSERT INTO st_timeout (st_date, st_timeout) VALUES ('$date','$timeout');")){
+                            }
+                        }
+                }
+                 
+                if (isset($_POST['time_out'])){
+                        $st_id = $_POST['st_id'];
+                        date_default_timezone_set('Asia/Manila');
+                        $date = date('Y-m-d');
+                        $timeout = date('H:i:s');
+                        
+                        // check if the record exists in the database
+                        $result = mysqli_query($conn, "SELECT * FROM student_pfp WHERE st_id = '$st_id'");
+                        if(mysqli_num_rows($result) == 0) {
+                            echo "Invalid Student ID";
+                        } else {
+                        
+                            if(mysqli_query($conn, "UPDATE st_time SET st_timeout='$timeout' WHERE st_id='$st_id' AND st_date='$date';")){
                 ?>
-                <script type="text/javascript">
-                    alert("Successfully TimeOut: Student ID - TimeOut.")
-                </script>
+                                <script type="text/javascript">
+                                    alert("TimeOut Successfully.<?php $st_id - $timeout ?>")
+                                </script>
                 <?php
-            }else{
+                            }else{
                 ?>
-                <script type="text/javascript">
-                    alert("Error Found.")
-                </script>
+                                <script type="text/javascript">
+                                    alert("TimeOut Unsuccessfully. Record Not Found.")
+                                </script>
                 <?php
-            }
-        }
-        ?>
+                            }
+                        }
+                }  
+            ?>
     </div>
 </div>
 </body>
