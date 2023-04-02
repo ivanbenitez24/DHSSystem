@@ -2,6 +2,10 @@
 include "db_conn.php";
 session_start();
 
+$st_idn = $_SESSION['st_id'];
+$stp_query = "SELECT * FROM st_duties WHERE st_id = '$st_idn'";
+
+$result = mysqli_query($conn, $stp_query);
  ?>
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -39,11 +43,6 @@ session_start();
                 </tr>
                 <tr>
                 <?php
-                    $st_idnum = $_SESSION['st_id'];
-                    $stp_query = "SELECT * FROM st_duties WHERE st_id = '$st_idnum'";
-                    
-                    $result = mysqli_query($conn, $stp_query);
-                    
                     $row = mysqli_fetch_assoc($result)
                     ?>
                     <td><?php echo $row['st_duty']; ?></td>
