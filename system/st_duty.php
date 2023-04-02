@@ -33,7 +33,7 @@ session_start();
                 </tr>
                 <?php
                 $st_idnum = $_SESSION['st_id'];
-                $stdh_query = "SELECT * FROM st_time WHERE st_id = $st_idnumn";
+                $stdh_query = "SELECT * FROM st_time WHERE st_id = $st_idnum";
                 $result = mysqli_query($conn, $stdh_query);
 
                     while($row = mysqli_fetch_assoc($result)){
