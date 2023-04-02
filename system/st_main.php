@@ -1,4 +1,7 @@
-
+<?php
+include "db_conn.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -14,7 +17,7 @@
             <img src="img/logo.png" alt="logo.png" style="width: 150px; height: 150px;">
             <h2><b>HK Duty Hours Monitoring System</b></h2>
             <h1> STUDENT </h1>
-            <h5>06-1920-01470</h5>
+            <h5><?php echo $_SESSION['st_id'] ?></h5>
         </div>
         
         <div class="card">

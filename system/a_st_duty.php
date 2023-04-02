@@ -1,15 +1,15 @@
 <?php
 include "db_conn.php";
 session_start();
+include "st_duty.php";
 
-$std_query = "SELECT login_student.st_id, login_student.st_duty, duty_student.st_room, duty_student.st_day, duty_student.st_time1, duty_student.st_time2
-FROM login_student, duty_student
-WHERE login_student.st_id = duty_student.st_id
-ORDER BY login_student.st_id;";
+$std_query = "SELECT student_pfp.st_id, st_duties.st_duty, st_duties.st_room, st_duties.st_day, st_duties.st_timehours 
+FROM student_pfp, st_duties 
+WHERE student_pfp.st_id = st_duties.st_id 
+ORDER BY student_pfp.st_id;";
 
 $result = mysqli_query($conn, $std_query);
-
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -24,8 +24,7 @@ $result = mysqli_query($conn, $std_query);
         <div class="nav">
             <img src="img/logo.png" alt="logo.png" style="width: 150px; height: 150px;">
             <h2><b>HK Duty Hours Monitoring System</b></h2>
-            <h1> ADMIN </h1>
-            
+            <h1> ADMIN </h1>   
         </div>
 
         <button type="btn_exit" onclick="window.location.href='a_main.php'"><i class="fas fa-sign-out-alt"></i>Back</button>
@@ -39,24 +38,22 @@ $result = mysqli_query($conn, $std_query);
                     <th>Assigned Duty</th>
                     <th>Day</th>
                     <th>Time</th>
-                    <th>Rendered Hours</th>
-                    <th>Remaining Duty Hours</th>
+                    <th>Total Duty Hours</th>
                 </tr>
                 <tr>
-                    <?php
-                        while($row = mysqli_fetch_assoc($result)){
-                    ?>
+            <?php
+                while($row = mysqli_fetch_assoc($result)){
+            ?>
                     <td><?php echo $row['st_room']; ?></td>
                     <td><?php echo $row['st_id']; ?></td>
                     <td><?php echo $row['st_duty']; ?></td>
                     <td><?php echo $row['st_day']; ?></td>
-                    <td><?php echo $row['st_time']; ?></td>
-                    <td><?php echo $row['st_render']; ?></td>
-                    <td><?php echo $row['st_remain']; ?></td>
+                    <td><?php echo $row['st_timehours']; ?></td>
+                    <td><?php echo $total_duty_hours_fmt; ?></td>
                 </tr>
-                    <?php
-                        }
-                    ?>
+            <?php
+                }
+            ?>
             </table>
             <script>
                 function myFunction() {
