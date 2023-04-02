@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $stdh_query);
 <html lang = "en" dir = "ltr">
 <head>
     <meta charset="utf-8">
-    <title> Student </title>
+    <title> Student Duty </title>
     <link rel = "stylesheet" href = "css/style_st_duty.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
