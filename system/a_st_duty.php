@@ -1,7 +1,6 @@
 <?php
 include "db_conn.php";
 session_start();
-include "st_duty.php";
 
 $std_query = "SELECT student_pfp.st_id, st_duties.st_duty, st_duties.st_room, st_duties.st_day, st_duties.st_timehours 
 FROM student_pfp, st_duties 
@@ -42,6 +41,7 @@ $result = mysqli_query($conn, $std_query);
                 </tr>
                 <tr>
             <?php
+            include "st_duty.php";
                 while($row = mysqli_fetch_assoc($result)){
             ?>
                     <td><?php echo $row['st_room']; ?></td>
