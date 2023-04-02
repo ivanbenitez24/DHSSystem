@@ -36,7 +36,7 @@ $result = mysqli_query($conn, $stdh_query);
                     <th>Total Duty Hours</th>
                 </tr>
                 <?php
-                while($row = mysqli_fetch_assoc($result)){
+                    while($row = mysqli_fetch_assoc($result)){
                     $time_in = strtotime($row['st_timein']);
                     $time_out = strtotime($row['st_timeout']);
                     $total_hours = ($time_out - $time_in) / 3600;
@@ -47,11 +47,12 @@ $result = mysqli_query($conn, $stdh_query);
                 
                     // Calculate total duty hours by adding rendered hours to previous row's total duty hours
                     $total_duty_hours_fmt = $rendered_hours_fmt;
-                    if (isset($prev_total_duty_hours) && $rendered_hours_fmt !== null) {
+                    if (isset($prev_total_duty_hours)) {
                         $total_duty_hours_sec = strtotime($prev_total_duty_hours) + strtotime($rendered_hours_fmt);
                         $total_duty_hours_fmt = date('H:i', $total_duty_hours_sec);
                     }
                     $prev_total_duty_hours = $total_duty_hours_fmt;
+                   
                 ?>
                 <tr>
                     <td><?php echo $row['st_date']; ?></td>
@@ -61,7 +62,7 @@ $result = mysqli_query($conn, $stdh_query);
                     <td><?php echo $total_duty_hours_fmt; ?></td>      
                 </tr>
                 <?php
-                    }
+                }
                 ?>
             </table>
         </div>
