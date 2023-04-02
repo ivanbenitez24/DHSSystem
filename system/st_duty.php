@@ -54,7 +54,7 @@ $result = mysqli_query($conn, $stdh_query);
                             }
                             $prev_total_duty_hours = $total_duty_hours_fmt;
                         }
-                    }
+                    
                 ?>
                 <tr>
                     <td><?php echo $row['st_date']; ?></td>
