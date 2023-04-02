@@ -112,7 +112,7 @@ include "db_conn.php";
                             if(mysqli_query($conn, "INSERT INTO st_time (st_id, st_date, st_timein) VALUES ('$st_id', '$date','$timein');")){
                 ?>
                                 <script type="text/javascript">
-                                    alert("TimeIn Successfully.<?php $st_id - $timein ?>")
+                                    alert("TimeIn Successfully.<?php $st_id ?> - <?php $timein ?>")
                                 </script>
                 <?php
                             }else{
@@ -140,7 +140,7 @@ include "db_conn.php";
                             if(mysqli_query($conn, "UPDATE st_time SET st_timeout='$timeout' WHERE st_id='$st_id' AND st_date='$date';")){
                 ?>
                                 <script type="text/javascript">
-                                    alert("TimeOut Successfully.<?php $st_id - $timeout ?>")
+                                    alert("TimeOut Successfully.<?php $st_id ?> - <?php $timeout ?>")
                                 </script>
                 <?php
                             }else{
