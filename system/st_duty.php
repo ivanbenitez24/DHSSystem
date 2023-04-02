@@ -1,10 +1,6 @@
 <?php
 include "db_conn.php";
 session_start();
-
-$stdh_query = "SELECT * FROM st_time WHERE st_id = st_id";
-
-$result = mysqli_query($conn, $stdh_query);
 ?>
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -36,6 +32,10 @@ $result = mysqli_query($conn, $stdh_query);
                     <th>Total Duty Hours</th>
                 </tr>
                 <?php
+                $st_idnum = $_SESSION['st_id'];
+                $stdh_query = "SELECT * FROM st_time WHERE st_id = $st_idnumn";
+                $result = mysqli_query($conn, $stdh_query);
+
                     while($row = mysqli_fetch_assoc($result)){
                     $time_in = strtotime($row['st_timein']);
                     $time_out = strtotime($row['st_timeout']);
