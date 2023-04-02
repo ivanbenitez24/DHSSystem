@@ -84,7 +84,7 @@
       </script>
           
       <?php
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['add'])) {
           $st_id = $_POST['st_id'];
           $st_name = $_POST['st_name'];
           $st_email = $_POST['st_email'];
