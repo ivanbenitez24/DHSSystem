@@ -59,9 +59,8 @@
           <input type="text" placeholder="Enter Assigned Department" id="st_room" name="st_room">
           <input type="text" placeholder="Enter Assigned Day" id="st_aday" name="st_aday">
           <input type="text" placeholder="Enter Assigned Time" id="st_atime" name="st_atime">
-
-      </form>
-      <button type="submit" class="btn" name="add" id="add">ADD</button>
+          <button type="submit" class="btn" name="add" id="add">ADD</button>
+      </form> 
     </div> 
       <script>
       function validateForm() {
