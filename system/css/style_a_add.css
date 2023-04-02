@@ -103,6 +103,19 @@ img{
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.form-container select {
+  width: 12%;
+  padding: 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.form-container select:focus {
+background-color: #ddd;
+outline: none;
+}
 select option {
   font-size: 14px;
   color: #333;
