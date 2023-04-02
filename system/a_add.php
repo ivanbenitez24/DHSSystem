@@ -21,7 +21,7 @@
     <button type="btn_exit" onclick="window.location.href='a_main.php'">Back</button>
       
     <div class="section" id="addForm">
-      <form action="#" method="Post" class="form-container">
+    <form action="#" method="POST" class="form-container" onsubmit="return validateForm()">
         <h2>Add New HK Student</h2>
           <input type="text" placeholder="Enter Student ID" id="st_id" name="st_id">
           <input type="text" placeholder="Enter Student Name" id="st_name" name="st_name">
@@ -63,24 +63,25 @@
       </form> 
     </div> 
       <script>
-      function validateForm() {
-        var st_id = document.forms["addForm"]["st_id"].value;
-        var st_name = document.forms["addForm"]["st_name"].value;
-        var st_email = document.forms["addForm"]["st_email"].value;
-        var st_pass = document.forms["addForm"]["st_pass"].value;
-        var st_crs = document.forms["addForm"]["st_crs"].value;
-        var st_yrlvl = document.forms["addForm"]["st_yrlvl"].value;
-        var st_hktype = document.forms["addForm"]["st_hktype"].value;
-        var st_duty = document.forms["addForm"]["st_duty"].value;
-        var st_room = document.forms["addForm"]["st_room"].value;
-        var st_aday = document.forms["addForm"]["st_aday"].value;
-        var st_atime = document.forms["addForm"]["st_atime"].value;
-      
-        if (st_id == "" || st_name == "" || st_email == "" || st_pass == "" || st_crs == "" || st_yrlvl == "" || st_hktype == "" || st_duty == "" || st_room == "" || st_aday == "" || st_atime == "") {
-          alert("All fields must be filled out");
-          return false;
+        function validateForm() {
+          var st_id = document.forms["addForm"]["st_id"].value;
+          var st_name = document.forms["addForm"]["st_name"].value;
+          var st_email = document.forms["addForm"]["st_email"].value;
+          var st_pass = document.forms["addForm"]["st_pass"].value;
+          var st_crs = document.forms["addForm"]["st_crs"].value;
+          var st_yrlvl = document.forms["addForm"]["st_yrlvl"].value;
+          var st_hktype = document.forms["addForm"]["st_hktype"].value;
+          var st_duty = document.forms["addForm"]["st_duty"].value;
+          var st_room = document.forms["addForm"]["st_room"].value;
+          var st_aday = document.forms["addForm"]["st_aday"].value;
+          var st_atime = document.forms["addForm"]["st_atime"].value;
+        
+          if (st_id == "" || st_name == "" || st_email == "" || st_pass == "" || st_crs == "" || st_yrlvl == "" || st_hktype == "" || st_duty == "" || st_room == "" || st_aday == "" || st_atime == "") {
+            alert("All fields must be filled out");
+            return false;
+          }
+          return true;
         }
-      }
       </script>       
       <?php
         if (isset($_POST['add'])) {
