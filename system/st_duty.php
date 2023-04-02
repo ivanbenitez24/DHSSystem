@@ -2,10 +2,10 @@
 include "db_conn.php";
 session_start();
 
-$stdh_query = "SELECT * FROM st_dutyhours";
+$stdh_query = "SELECT * FROM st_time";
 
 $result = mysqli_query($conn, $stdh_query);
- ?>
+?>
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
 <head>
@@ -28,23 +28,39 @@ $result = mysqli_query($conn, $stdh_query);
         
         <div class="article">
             <table id="St_table">
-                <tr class="header">
-                    <th>Date</th>
-                    <th>Time In</th>
-                    <th>Time Out</th>
-                    <th>Rendered Hours</th>
-                    <th>Remaining Duty Hours</th>
-                </tr>
-                <tr>
+                    <tr class="header">
+                        <th>Date</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                        <th>Rendered Hours</th>
+                        <th>Total Duty Hours</th>
+                    </tr>
                     <?php
                         while($row = mysqli_fetch_assoc($result)){
+                        $time_in = strtotime($row['st_timein']);
+                        $time_out = strtotime($row['st_timeout']);
+                        $total_hours = ($time_out - $time_in) / 3600;
+                        $rendered_hours = min($total_hours, 90); // assume max duty hours is 90
+                        
+                        // Format hours and minutes
+                        $rendered_hours_fmt = sprintf('%02d:%02d', floor($rendered_hours), ($rendered_hours - floor($rendered_hours)) * 60);
+
+                        // Calculate total duty hours by adding rendered hours to previous row's total duty hours
+                        $total_duty_hours_fmt = $rendered_hours_fmt;
+                        if (isset($prev_total_duty_hours)) {
+                            $total_duty_hours_sec = strtotime($prev_total_duty_hours) + strtotime($rendered_hours_fmt);
+                            $total_duty_hours_fmt = date('H:i', $total_duty_hours_sec);
+                        }
+                        $prev_total_duty_hours = $total_duty_hours_fmt;
+                    
                     ?>
-                    <td><?php echo $row['st_date']; ?></td>
-                    <td><?php echo $row['st_timein']; ?></td>
-                    <td><?php echo $row['st_timeout']; ?></td>
-                    <td><?php echo $row['st_renderhr']; ?></td>
-                    <td><?php echo $row['st_remainhr']; ?></td>      
-                </tr>
+                    <tr>
+                        <td><?php echo $row['st_date']; ?></td>
+                        <td><?php echo $row['st_timein']; ?></td>
+                        <td><?php echo $row['st_timeout']; ?></td>
+                        <td><?php echo $rendered_hours_fmt; ?></td>
+                        <td><?php echo $total_duty_hours_fmt; ?></td>      
+                    </tr>
                     <?php
                         }
                     ?>
