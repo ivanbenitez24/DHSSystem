@@ -1,6 +1,5 @@
 <?php
 include "db_conn.php";
-session_start();
 
 $std_query = "SELECT student_pfp.st_id, st_duties.st_duty, st_duties.st_room, st_duties.st_day, st_duties.st_timehours 
 FROM student_pfp, st_duties 
