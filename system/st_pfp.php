@@ -2,12 +2,6 @@
 include "db_conn.php";
 session_start();
 
-$stp_query = "SELECT student_pfp.st_id, st_duties.st_duty, st_duties.st_room, st_duties.st_day, st_duties.st_timehours
-FROM student_pfp, st_duties
-WHERE student_pfp.st_id = st_duties.st_id
-ORDER BY student_pfp.st_id;";
-
-$result = mysqli_query($conn, $stp_query);
  ?>
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -45,6 +39,11 @@ $result = mysqli_query($conn, $stp_query);
                 </tr>
                 <tr>
                 <?php
+                    $st_idnum = $_SESSION['st_id'];
+                    $stp_query = "SELECT * FROM st_duties WHERE st_id = '$st_idnum'";
+                    
+                    $result = mysqli_query($conn, $stp_query);
+                    
                     $row = mysqli_fetch_assoc($result)
                     ?>
                     <td><?php echo $row['st_duty']; ?></td>
