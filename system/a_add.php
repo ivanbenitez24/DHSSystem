@@ -60,8 +60,8 @@
           <input type="text" placeholder="Enter Assigned Day" id="st_aday" name="st_aday">
           <input type="text" placeholder="Enter Assigned Time" id="st_atime" name="st_atime">
 
-          <button type="submit" class="btn" name="add" id="add">ADD</button>
       </form>
+      <button type="submit" class="btn" name="add" id="add">ADD</button>
     </div> 
       <script>
       function validateForm() {
