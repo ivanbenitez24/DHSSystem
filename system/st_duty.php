@@ -2,7 +2,7 @@
 include "db_conn.php";
 session_start();
 
-$stdh_query = "SELECT * FROM st_time";
+$stdh_query = "SELECT * FROM st_time WHERE st_id = st_id";
 
 $result = mysqli_query($conn, $stdh_query);
 ?>

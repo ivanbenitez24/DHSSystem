@@ -28,6 +28,9 @@ $result = mysqli_query($conn, $stp_query);
         </div>
 
         <div class="card">
+            <?php
+                $row = mysqli_fetch_assoc($result)
+            ?>
             <h1><?php echo $_SESSION['st_name'] ?></h1>
             <p><?php echo $_SESSION['st_id'] ?></p>
             <p><?php echo $_SESSION['st_course'] ?> <?php echo $_SESSION['st_yr'] ?></p>
@@ -45,7 +48,7 @@ $result = mysqli_query($conn, $stp_query);
                 </tr>
                 <tr>
                 <?php
-                        $row = mysqli_fetch_assoc($result)
+                    $row = mysqli_fetch_assoc($result)
                     ?>
                     <td><?php echo $row['st_duty']; ?></td>
                     <td><?php echo $row['st_room']; ?></td>
