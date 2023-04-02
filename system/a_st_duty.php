@@ -13,7 +13,7 @@ $result = mysqli_query($conn, $std_query);
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title> Admin </title>
+    <title> Admin (Student Duty) </title>
     <link rel="stylesheet" href="css/style_a_st_duty.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $std_query);
         <div class="nav">
             <img src="img/logo.png" alt="logo.png" style="width: 150px; height: 150px;">
             <h2><b>HK Duty Hours Monitoring System</b></h2>
-            <h1> ADMIN (Student Duty) </h1>   
+            <h1> ADMIN </h1>   
         </div>
 
         <button type="btn_exit" onclick="window.location.href='a_main.php'"><i class="fas fa-sign-out-alt"></i>Back</button>
