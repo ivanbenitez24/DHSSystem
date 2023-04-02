@@ -36,25 +36,22 @@ $result = mysqli_query($conn, $stdh_query);
                     <th>Total Duty Hours</th>
                 </tr>
                 <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $time_in = isset($row['st_timein']) ? strtotime($row['st_timein']) : null;
-                        $time_out = isset($row['st_timeout']) ? strtotime($row['st_timeout']) : null;
-                        if ($time_in !== null && $time_out !== null) {
-                            $total_hours = ($time_out - $time_in) / 3600;
-                            $rendered_hours = min($total_hours, 90); // assume max duty hours is 90
+                while($row = mysqli_fetch_assoc($result)){
+                    $time_in = strtotime($row['st_timein']);
+                    $time_out = strtotime($row['st_timeout']);
+                    $total_hours = ($time_out - $time_in) / 3600;
+                    $rendered_hours = min($total_hours, 90); // assume max duty hours is 90
                     
-                            // Format hours and minutes
-                            $rendered_hours_fmt = sprintf('%02d:%02d', floor($rendered_hours), ($rendered_hours - floor($rendered_hours)) * 60);
-                    
-                            // Calculate total duty hours by adding rendered hours to previous row's total duty hours
-                            $total_duty_hours_fmt = $rendered_hours_fmt;
-                            if (isset($prev_total_duty_hours)) {
-                                $total_duty_hours_sec = strtotime($prev_total_duty_hours) + strtotime($rendered_hours_fmt);
-                                $total_duty_hours_fmt = date('H:i', $total_duty_hours_sec);
-                            }
-                            $prev_total_duty_hours = $total_duty_hours_fmt;
-                        }
-                    
+                    // Format hours and minutes
+                    $rendered_hours_fmt = sprintf('%02d:%02d', floor($rendered_hours), ($rendered_hours - floor($rendered_hours)) * 60);
+                
+                    // Calculate total duty hours by adding rendered hours to previous row's total duty hours
+                    $total_duty_hours_fmt = $rendered_hours_fmt;
+                    if (isset($prev_total_duty_hours) && $rendered_hours_fmt !== null) {
+                        $total_duty_hours_sec = strtotime($prev_total_duty_hours) + strtotime($rendered_hours_fmt);
+                        $total_duty_hours_fmt = date('H:i', $total_duty_hours_sec);
+                    }
+                    $prev_total_duty_hours = $total_duty_hours_fmt;
                 ?>
                 <tr>
                     <td><?php echo $row['st_date']; ?></td>
