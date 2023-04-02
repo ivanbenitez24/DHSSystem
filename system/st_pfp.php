@@ -2,7 +2,7 @@
 include "db_conn.php";
 session_start();
 
-$stp_query = "SELECT student_pfp.st_id, st_duties.st_duty, st_duties.st_room, st_duties.st_day, st_duties.st_time
+$stp_query = "SELECT student_pfp.st_id, st_duties.st_duty, st_duties.st_room, st_duties.st_day, st_duties.st_timehours
 FROM student_pfp, st_duties
 WHERE student_pfp.st_id = st_duties.st_id
 ORDER BY student_pfp.st_id;";
@@ -50,7 +50,7 @@ $result = mysqli_query($conn, $stp_query);
                     <td><?php echo $row['st_duty']; ?></td>
                     <td><?php echo $row['st_room']; ?></td>
                     <td><?php echo $row['st_day']; ?></td>
-                    <td><?php echo $row['st_time']; ?></td>        
+                    <td><?php echo $row['st_timehours']; ?></td>        
                 </tr>
             </table>
         </div>
