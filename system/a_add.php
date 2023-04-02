@@ -81,8 +81,7 @@
           return false;
         }
       }
-      </script>
-          
+      </script>       
       <?php
         if (isset($_POST['add'])) {
           $st_id = $_POST['st_id'];
