@@ -23,45 +23,44 @@
     <div class="section" id="addForm">
       <form action="#" method="Post" class="form-container">
         <h2>Add New HK Student</h2>
-
           <input type="text" placeholder="Enter Student ID" id="st_id" name="st_id">
           <input type="text" placeholder="Enter Student Name" id="st_name" name="st_name">
           <input type="text" placeholder="Enter Student Email" id="st_email" name="st_email">
           <input type="password" placeholder="Enter Password" id="st_pass" name="st_pass">
           <br>
-            <select id="st_crs" name="st_crs">
-              <option value="">Select Course</option>
-              <option value="BSIT">BSIT</option>
-              <option value="BS Criminology">BS Criminology</option>
-              <option value="BSBA">BSBA</option>
-              <option value="BSTM">BSTM</option>
-            </select>
-            <select id="st_yrlvl" name="st_yrlvl">
-              <option value="">Select Year Level</option>
-              <option value="1st Year">1st Year</option>
-              <option value="2nd Year">2nd Year</option>
-              <option value="3rd Year">3rd Year</option>
-              <option value="4th Year">4th Year</option>
-            </select>
-            <select id="st_hktype" name="st_hktype">
-              <option value="">Select HK Type</option>
-              <option value="HK25">HK25</option>
-              <option value="HK50">HK50</option>
-              <option value="HK75">HK75</option>
-              <option value="HK100">HK100</option>
-            </select>
-            <select id="st_duty" name="st_duty">
-              <option value="">Select Assigned Duty</option>
-              <option value="Student Facilitator">Student Facilitator</option>
-              <option value="Student Roaming">Student Roaming</option>
-              <option value="CSDL Assistant">CSDL Assistant</option>
-            </select>
-            <br>
-            <input type="text" placeholder="Enter Assigned Department" id="st_room" name="st_room">
-            <input type="text" placeholder="Enter Assigned Day" id="st_aday" name="st_aday">
-            <input type="text" placeholder="Enter Assigned Time" id="st_atime" name="st_atime">
+          <select id="st_crs" name="st_crs">
+            <option value="">Select Course</option>
+            <option value="BSIT">BSIT</option>
+            <option value="BS Criminology">BS Criminology</option>
+            <option value="BSBA">BSBA</option>
+            <option value="BSTM">BSTM</option>
+          </select>
+          <select id="st_yrlvl" name="st_yrlvl">
+            <option value="">Select Year Level</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+          </select>
+          <select id="st_hktype" name="st_hktype">
+            <option value="">Select HK Type</option>
+            <option value="HK25">HK25</option>
+            <option value="HK50">HK50</option>
+            <option value="HK75">HK75</option>
+            <option value="HK100">HK100</option>
+          </select>
+          <select id="st_duty" name="st_duty">
+            <option value="">Select Assigned Duty</option>
+            <option value="Student Facilitator">Student Facilitator</option>
+            <option value="Student Roaming">Student Roaming</option>
+            <option value="CSDL Assistant">CSDL Assistant</option>
+          </select>
+          <br>
+          <input type="text" placeholder="Enter Assigned Department" id="st_room" name="st_room">
+          <input type="text" placeholder="Enter Assigned Day" id="st_aday" name="st_aday">
+          <input type="text" placeholder="Enter Assigned Time" id="st_atime" name="st_atime">
 
-            <button type="submit" class="btn" name="add" id="add">ADD</button>
+          <button type="submit" class="btn" name="add" id="add">ADD</button>
       </form>
     </div> 
       <script>
