@@ -28,7 +28,7 @@ $result = mysqli_query($conn, $std_query);
             document.getElementById("edit-modal").style.display = "none";
         }
 
-        function deleteRow(st_id) {
+        function deleteRow() {
             var result = confirm("Are you sure you want to delete this student record?");
             if (result) {
                 <?php
