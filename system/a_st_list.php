@@ -28,10 +28,11 @@ $result = mysqli_query($conn, $std_query);
             document.getElementById("edit-modal").style.display = "none";
         }
 
-        function deleteRow(id) {
-            
+        function deleteRow(st_id) {
+            var result = confirm("Are you sure you want to delete this student record?");
+            if (result) {
                 <?php
-                    $id = $_GET['id'];
+                    $id = $_GET['st_id'];
                     $sql = "DELETE FROM student_pfp WHERE st_id = '$id'";
                     if ($conn->query($sql) === TRUE) {
                 ?>
@@ -44,7 +45,7 @@ $result = mysqli_query($conn, $std_query);
                 <?php
                     }
                 ?>
-            
+            }
         }
     </script>
 </head>
