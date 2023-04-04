@@ -33,17 +33,8 @@ $result = mysqli_query($conn, $std_query);
             if (result) {
                 <?php
                     $id = $_GET['st_id'];
-                    $sql = "DELETE FROM student_pfp WHERE st_id = '$id'";
-                    if ($conn->query($sql) === TRUE) {
-                ?>
-                        message("Successfully Deleted.");
-                <?php
-                    } 
-                    else {
-                ?>
-                        alert("Error Deleting Student.");
-                <?php
-                    }
+                    mysqli_query($conn,"DELETE FROM `student_pfp` WHERE st_id = '$id'");
+                    header('location:a_st_list.php');
                 ?>
             }
         }
