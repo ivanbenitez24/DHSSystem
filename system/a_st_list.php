@@ -31,7 +31,20 @@ $result = mysqli_query($conn, $std_query);
         function deleteRow(id) {
             var result = confirm("Are you sure you want to delete this student record?");
             if (result) {
-                window.location.href = "delete_student.php?st_id=" + id;
+                <?php
+                $id_st=$_GET['st_id'];
+                $sql = "DELETE FROM student_pfp WHERE st_id=$id_st";
+                if ($conn->query($sql) === TRUE) {
+                ?>
+                    <script type="text/javascript">
+                        alert("Deleted Successfully.")
+                    </script>
+                <?php
+                } 
+                else {
+                    echo "Error deleting record: " . $conn->error;
+                }
+                ?>
             }
         }
     </script>
@@ -73,8 +86,8 @@ $result = mysqli_query($conn, $std_query);
                     <td><?php echo $row['st_hktype']; ?></td>
                     <td><?php echo $row['st_email']; ?></td>
                     <td>
-                          <a href="#" onclick="showEditModal('<?php echo $row['st_id']; ?>', '<?php echo $row['st_name']; ?>', '<?php echo $row['st_yr']; ?>', '<?php echo $row['st_course']; ?>', '<?php echo $row['st_hktype']; ?>', '<?php echo $row['st_email']; ?>')"><i class="fas fa-edit"></i>Edit</a>
-                          <a href="#" onclick="deleteRow('<?php echo $row['st_id']; ?>')"><i class="fas fa-trash"></i>Delete</a>
+                          <a href="#" onclick="showEditModal('<?php echo $row['st_id']; ?>', '<?php echo $row['st_name']; ?>', '<?php echo $row['st_yr']; ?>', '<?php echo $row['st_course']; ?>', '<?php echo $row['st_hktype']; ?>', '<?php echo $row['st_email']; ?>')">Edit</a>
+                          <a href="#" onclick="deleteRow('<?php echo $row['st_id']; ?>')">Delete</a>
                     </td>
                 </tr>
             <?php
