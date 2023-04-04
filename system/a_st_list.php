@@ -31,20 +31,7 @@ $result = mysqli_query($conn, $std_query);
         function deleteRow(id) {
             var result = confirm("Are you sure you want to delete this student record?");
             if (result) {
-                <?php
-                $id_st=$_GET['st_id'];
-                $sql = "DELETE FROM student_pfp WHERE st_id=$id_st";
-                if ($conn->query($sql) === TRUE) {
-                ?>
-                    <script type="text/javascript">
-                        alert("Deleted Successfully.")
-                    </script>
-                <?php
-                } 
-                else {
-                    echo "Error deleting record: " . $conn->error;
-                }
-                ?>
+                window.location.href = "delete_student.php?st_id=" + id;
             }
         }
     </script>
