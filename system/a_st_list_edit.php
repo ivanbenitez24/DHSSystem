@@ -23,7 +23,7 @@
 	
     <div class="section" id="editForm">
         <h2>Edit Student Profile</h2>
-        <form method="POST" action="update.php?id=<?php echo $id; ?>">
+        <form class="form" method="POST" action="update.php?id=<?php echo $id; ?>">
             <label>Student ID :</label><input type="text" value="<?php echo $row['st_id']; ?>" name="st_id"><br>
             <label>Student Name :</label><input type="text" value="<?php echo $row['st_name']; ?>" name="st_name"><br>
             <label>Year Level :</label><input type="text" value="<?php echo $row['st_yr']; ?>" name="st_yr"><br>
