@@ -41,6 +41,7 @@ $result = mysqli_query($conn, $std_query);
                 </tr>
                 <tr>
             <?php
+                $total_duty_hours_fmt = "";
                 while($row = mysqli_fetch_assoc($result)){
             ?>
                     <td><?php echo $row['st_room']; ?></td>
