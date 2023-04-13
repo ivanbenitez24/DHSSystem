@@ -7,7 +7,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin</title>
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/style_a_add.css">
 </head>
 <body>
 	<h2>Edit Student Profile</h2>
