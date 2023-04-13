@@ -24,12 +24,12 @@
     <div class="section" id="editForm">
         <h2>Edit Student Profile</h2>
         <form method="POST" action="update.php?id=<?php echo $id; ?>">
-            <label>Student ID</label><input type="text" value="<?php echo $row['st_id']; ?>" name="st_id"><br>
-            <label>Student Name</label><input type="text" value="<?php echo $row['st_name']; ?>" name="st_name"><br>
-            <label>Year Level</label><input type="text" value="<?php echo $row['st_yr']; ?>" name="st_yr"><br>
-            <label>Course</label><input type="text" value="<?php echo $row['st_course']; ?>" name="st_course"><br>
-            <label>HK Type</label><input type="text" value="<?php echo $row['st_hktype']; ?>" name="st_hktype"><br>
-            <label>Email</label><input type="text" value="<?php echo $row['st_email']; ?>" name="st_email"><br>
+            <label>Student ID :</label><input type="text" value="<?php echo $row['st_id']; ?>" name="st_id"><br>
+            <label>Student Name :</label><input type="text" value="<?php echo $row['st_name']; ?>" name="st_name"><br>
+            <label>Year Level :</label><input type="text" value="<?php echo $row['st_yr']; ?>" name="st_yr"><br>
+            <label>Course :</label><input type="text" value="<?php echo $row['st_course']; ?>" name="st_course"><br>
+            <label>HK Type :</label><input type="text" value="<?php echo $row['st_hktype']; ?>" name="st_hktype"><br>
+            <label>Email :</label><input type="text" value="<?php echo $row['st_email']; ?>" name="st_email"><br>
             <input type="submit" name="submit"><br>
             <a href="a_st_list.php">Back</a>
         </form>
