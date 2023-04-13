@@ -31,7 +31,7 @@
             <label>HK Type :</label><input type="text" value="<?php echo $row['st_hktype']; ?>" name="st_hktype"><br>
             <label>Email :</label><input type="text" value="<?php echo $row['st_email']; ?>" name="st_email"><br>
             <input type="submit" name="submit"><br>
-            <a href="a_st_list.php">Back</a>
+            <button type="btn_exit" onclick="window.location.href='a_st_list.php'">Back</button>
         </form>
     </div>
 </div>
