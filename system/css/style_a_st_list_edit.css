@@ -52,6 +52,12 @@ body{
   .form-container {
     padding: 10px;
   }
+  .form-container label {
+    width: 50%;
+    font-size: 14px;
+    padding: 8px;
+    margin: 5px 0 22px 0;
+  }
   .form-container input[type=text], .form-container input[type=submit] {
     width: 50%;
     font-size: 14px;
