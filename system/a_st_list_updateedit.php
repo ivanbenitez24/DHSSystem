@@ -1,6 +1,6 @@
 <?php
 	include('db_conn.php');
-	$id=$_GET['st_id'];
+	$id=$_GET['id'];
 
     $st_name = $_POST['st_name'];
     $st_yr = $_POST['st_yr']; 
