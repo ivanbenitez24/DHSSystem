@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <title> Admin </title>
-    <link rel="stylesheet" href="css/style_a_add.css">
+    <link rel="stylesheet" href="css/style_a_st_list_edit.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
