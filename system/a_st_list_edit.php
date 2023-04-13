@@ -1,6 +1,6 @@
 <?php
 	include('db_conn.php');
-	$id=$_GET[$row['st_id']];
+	$id = $_GET['st_id'];
 	$query=mysqli_query($conn,"SELECT * FROM `student_pfp` where st_id='$id'");
 	$row=mysqli_fetch_array($query);
 ?>
@@ -24,7 +24,6 @@
     <div class="section" id="editForm">
         <h2>Edit Student Profile</h2>
         <form class="form" method="POST" action="update.php?id=<?php echo $id; ?>">
-            <label>Student ID :</label><input type="text" value="<?php echo $row['st_id']; ?>" name="st_id"><br>
             <label>Student Name :</label><input type="text" value="<?php echo $row['st_name']; ?>" name="st_name"><br>
             <label>Year Level :</label><input type="text" value="<?php echo $row['st_yr']; ?>" name="st_yr"><br>
             <label>Course :</label><input type="text" value="<?php echo $row['st_course']; ?>" name="st_course"><br>
