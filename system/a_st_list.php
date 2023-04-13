@@ -13,7 +13,15 @@ $result = mysqli_query($conn, $std_query);
     <title> Admin </title>
     <link rel="stylesheet" href="css/style_a_st_duty.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    
+    <script>
+        function deleteRow() {
+            <?php
+                $id=$_GET['st_id'];
+                mysqli_query($conn,"DELETE FROM `student_pfp` where st_id='$id'");
+                header('location:a_st_list.php');
+            ?>
+        }
+    </script>
 </head>
 
 <body>
@@ -53,7 +61,7 @@ $result = mysqli_query($conn, $std_query);
                     <td><?php echo $row['st_email']; ?></td>
                     <td>
                         <a href="a_st_list_edit.php?id=<?php echo $row['st_id']; ?>">Edit</a>
-                        <a href="a_st_list_del.php?id= <?php echo $row['st_id']; ?>">Delete</a>
+                        <a href="#" onclick="deleteRow('<?php echo $row['st_id']; ?>')">Delete</a>
                     </td>
                 </tr>
             <?php
