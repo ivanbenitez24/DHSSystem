@@ -1,6 +1,6 @@
 <?php
 	include('db_conn.php');
-	$id = $_GET['st_id'];
+	$id = $_GET['id'];
 	$query=mysqli_query($conn,"SELECT * FROM `student_pfp` where st_id='$id'");
 	$row=mysqli_fetch_array($query);
 ?>
