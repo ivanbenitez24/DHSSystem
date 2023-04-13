@@ -41,6 +41,7 @@ $result = mysqli_query($conn, $std_query);
                 </tr>
                 <tr>
             <?php
+                $total_duty_hours = $total_duty_hours_fmt($_SESSION['st_id']); 
                 while($row = mysqli_fetch_assoc($result)){
             ?>
                     <td><?php echo $row['st_room']; ?></td>
@@ -48,7 +49,7 @@ $result = mysqli_query($conn, $std_query);
                     <td><?php echo $row['st_duty']; ?></td>
                     <td><?php echo $row['st_day']; ?></td>
                     <td><?php echo $row['st_timehours']; ?></td>
-                    <td><?php echo $total_duty_hours_fmt; ?></td>
+                    <td><?php echo $total_duty_hours; ?></td>
                 </tr>
             <?php
                 }
