@@ -1,5 +1,4 @@
 <?php
-    include('a_st_list.php');
 	$id=$_GET['id'];
 	include('db_conn.php');
 	mysqli_query($conn,"DELETE FROM `student_pfp` where st_id='$id'");
