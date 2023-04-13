@@ -13,30 +13,6 @@ $result = mysqli_query($conn, $std_query);
     <title> Admin </title>
     <link rel="stylesheet" href="css/style_a_st_duty.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script>
-        function showEditModal(id, name, year, course, hktype, email) {
-            document.getElementById("edit-modal").style.display = "block";
-            document.getElementById("edit-st_id").value = id;
-            document.getElementById("edit-st_name").value = name;
-            document.getElementById("edit-st_yr").value = year;
-            document.getElementById("edit-st_course").value = course;
-            document.getElementById("edit-st_hktype").value = hktype;
-            document.getElementById("edit-st_email").value = email;
-        }
-
-        function hideEditModal() {
-            document.getElementById("edit-modal").style.display = "none";
-        }
-
-        function deleteRow() {
-            var result = confirm("Are you sure you want to delete this student record?");
-            if (result) {
-                <?php
-                    header('location:a_st_delete.php');
-                ?>
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -75,8 +51,8 @@ $result = mysqli_query($conn, $std_query);
                     <td><?php echo $row['st_hktype']; ?></td>
                     <td><?php echo $row['st_email']; ?></td>
                     <td>
-                          <a href="#" onclick="showEditModal('<?php echo $row['st_id']; ?>', '<?php echo $row['st_name']; ?>', '<?php echo $row['st_yr']; ?>', '<?php echo $row['st_course']; ?>', '<?php echo $row['st_hktype']; ?>', '<?php echo $row['st_email']; ?>')">Edit</a>
-                          <a href="#" onclick="deleteRow('<?php echo $row['st_id']; ?>')">Delete</a>
+                        <a href="a_st_list_edit.php?id=<?php echo $row['st_id']; ?>">Edit</a>
+						<a href="a_st_list_del.php?id=<?php echo $row['st_id']; ?>">Delete</a>
                     </td>
                 </tr>
             <?php
