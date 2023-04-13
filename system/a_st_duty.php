@@ -48,7 +48,7 @@ $result = mysqli_query($conn, $std_query);
                     <td><?php echo $row['st_duty']; ?></td>
                     <td><?php echo $row['st_day']; ?></td>
                     <td><?php echo $row['st_timehours']; ?></td>
-                    <td><?php echo $total_duty_hours_fmt; ?></td>
+                    <td><?php echo $_GET[$total_duty_hours_fmt]; ?></td>
                 </tr>
             <?php
                 }
