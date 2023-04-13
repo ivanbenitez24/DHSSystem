@@ -32,9 +32,7 @@ $result = mysqli_query($conn, $std_query);
             var result = confirm("Are you sure you want to delete this student record?");
             if (result) {
                 <?php
-                    $id = $_GET['st_id'];
-                    mysqli_query($conn,"DELETE FROM `student_pfp` WHERE st_id = '$id'");
-                    header('location:a_st_list.php');
+                    header('location:a_st_delete.php');
                 ?>
             }
         }
