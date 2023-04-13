@@ -1,5 +1,6 @@
 <?php
 	include('db_conn.php');
+    include('a_st_list.php');
 	$id=$_GET['st_id'];
 
     $st_name = $_POST['st_name'];
