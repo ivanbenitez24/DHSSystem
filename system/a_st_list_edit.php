@@ -7,13 +7,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin</title>
+    <meta charset="utf-8">
+    <title> Admin </title>
     <link rel="stylesheet" href="css/style_a_add.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
-	<h2>Edit Student Profile</h2>
-    
+<div class="box">
+    <div class="nav">
+        <img src="img/logo.png" alt="logo.png" style="width: 150px; height: 150px;">
+        <h2><b>HK Duty Hours Monitoring System</b></h2>
+        <h1> ADMIN </h1>
+        
+    </div>
+	
     <div class="section" id="editForm">
+        <h2>Edit Student Profile</h2>
         <form method="POST" action="update.php?id=<?php echo $id; ?>">
             <label>Student ID</label><input type="text" value="<?php echo $row['st_id']; ?>" name="st_id">
             <label>Student Name</label><input type="text" value="<?php echo $row['st_name']; ?>" name="st_name">
@@ -25,5 +34,6 @@
             <a href="a_st_list.php">Back</a>
         </form>
     </div>
+</div>
 </body>
 </html>
